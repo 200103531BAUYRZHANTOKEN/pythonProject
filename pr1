@@ -1,0 +1,33 @@
+import time
+
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+
+
+
+
+try:
+    driver.get('https://www.youtube.com/')
+
+    time.sleep(5)
+
+    driver.get('https://www.adidas.com/')
+
+    time.sleep(5)
+
+    driver.get('https://www.reddit.com/')
+
+    time.sleep(5)
+
+except Exception as ex:
+
+    print(ex)
+
+
+finally:
+    driver.close()
+    driver.quit()
+
+
+

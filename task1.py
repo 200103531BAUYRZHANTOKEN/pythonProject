@@ -1,0 +1,58 @@
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+import time
+
+driver = webdriver.Chrome()
+
+driver.get("https://www.calculator.net/")
+time.sleep(5)
+
+four = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[2]/span[1]').click()
+plus = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[1]/span[4]').click()
+five = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[2]/span[2]').click()
+equal = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[5]/span[4]').click()
+back = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[1]/span[5]').click()
+nine = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[1]/span[3]').click()
+minus = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[2]/span[4]').click()
+two = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[3]/span[2]').click()
+equal = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[5]/span[4]').click()
+back = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[1]/span[5]').click()
+five = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[2]/span[2]').click()
+mult = driver.find_element(By.XPATH,'//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[3]/span[4]').click()
+two = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[3]/span[2]').click()
+equal = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[5]/span[4]').click()
+back = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[1]/span[5]').click()
+nine = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[1]/span[3]').click()
+div = driver.find_element(By.XPATH,'//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[4]/span[4]').click()
+three = driver.find_element(By.XPATH,'//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[3]/span[3]').click()
+equal = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[5]/span[4]').click()
+back = driver.find_element(By.XPATH, '//*[@id="sciout"]/tbody/tr[2]/td[2]/div/div[1]/span[5]').click()
+result = driver.find_element(By.XPATH,'//*[@id="scihistory"]')
+driver.implicitly_wait(10)
+
+actions = ActionChains(driver)
+actions.click(four)
+actions.click(plus)
+actions.click(five)
+actions.click(equal)
+actions.click(back)
+actions.click(nine)
+actions.click(minus)
+actions.click(two)
+actions.click(equal)
+actions.click(back)
+actions.click(five)
+actions.click(mult)
+actions.click(two)
+actions.click(equal)
+actions.click(back)
+actions.click(nine)
+actions.click(div)
+actions.click(three)
+actions.click(equal)
+actions.click(back)
+time.sleep(10)
+
+result_txt = result.text
+print("The result is:", result_txt)
